@@ -1,4 +1,4 @@
-from src.calculator import Calculator
+from src.random.calculator import Calculator
 from unittest import TestCase
 
 
