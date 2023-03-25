@@ -15,7 +15,3 @@ class Calculator:
 
     def to_the_power(self):
         return self.a ** self.b
-
-
-calci = Calculator(3, 4)
-print(calci.add())
