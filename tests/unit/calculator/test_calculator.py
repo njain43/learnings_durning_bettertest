@@ -6,11 +6,11 @@ class TestCalculator(TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        print(f'this is only called once at the begning of test cases')
+        print(f'this is only called once at the beginning of test suite')
         cls.calci = Calculator(4, 3)
 
     def setUp(self) -> None:
-        print(f'this is  called  at begning of each test cases')
+        print(f'this is  called  at beginning of each test cases')
         # self.calci = Calculator(3, 4)
 
     @classmethod
@@ -27,4 +27,4 @@ class TestCalculator(TestCase):
         self.assertEqual(1, self.calci.substract())
 
     def test_multiplication(self):
-        self.assertEqual(12,self.calci.multiply())
+        self.assertEqual(12, self.calci.multiply())
