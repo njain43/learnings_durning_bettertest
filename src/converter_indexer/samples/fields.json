@@ -34,7 +34,7 @@
     },
     {
       "name": "TargetSide",
-      "type": "uint_32"
+      "type": "uint_16"
     }
   ]
 }
