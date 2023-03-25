@@ -1,0 +1,10 @@
+{
+  "MsgType": "NewOrderSingle",
+  "Symbol": "INFY",
+  "Price": 1313.1,
+  "ClientId": "Nitesh",
+  "Side": "B",
+  "OrderType": "IOC",
+  "Quantity": 21,
+  "TargetSide": "NSE"
+}
