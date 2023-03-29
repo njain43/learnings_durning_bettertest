@@ -1,6 +1,6 @@
 *** Settings ***
 
-Library    src.robot.keywords.CalculatorKeyworkds
+Library    src.robot.calcikeywords.CalculatorKeyworkds
 
 
 *** Test Cases ***
