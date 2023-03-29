@@ -14,16 +14,18 @@ class ByteDecoder(ABC):
         return self._buf[0]
 
     def unit_8(self, v: bytes):
-        self._buf = ('<h', v)
+        self._buf = unpack('<h', v)
 
     def uint_16(self, v: bytes):
         self._buf = unpack('<H', v)
 
-    def string(self, v: bytes):
-        self._buf = unpack('<s', v)
+    def char_arr(self, v: bytes):
+        # self._buf = unpack('<s', v)
+        self._buf = (unpack('{}s'.format(len(v)), v)[0].decode('utf-8'),)
+
 
     def float(self, v: bytes):
         self._buf = unpack('d', v)
 
     def char(self, v: bytes):
-        self._buf = unpack('<c', v.decode('utf-8'))
+        self._buf = unpack('{}s'.format(len(v)), v)[0].decode('utf-8')

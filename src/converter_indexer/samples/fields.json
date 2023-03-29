@@ -2,7 +2,7 @@
   "message_definition": [
     {
       "name": "MsgType",
-      "type": "string"
+      "type": "char_arr"
     },
     {
       "name": "Quantity",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Symbol",
-      "type": "string"
+      "type": "char_arr"
     },
     {
       "name": "Price",
@@ -18,7 +18,7 @@
     },
     {
       "name": "ClientId",
-      "type": "string"
+      "type": "char_arr"
     },
     {
       "name": "Side",
@@ -26,7 +26,7 @@
     },
     {
       "name": "OrderType",
-      "type": "string"
+      "type": "char_arr"
     },
     {
       "name": "Quantity",
@@ -34,7 +34,7 @@
     },
     {
       "name": "TargetSide",
-      "type": "uint_16"
+      "type": "char_arr"
     }
   ]
 }

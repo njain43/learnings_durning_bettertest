@@ -1,6 +1,5 @@
 from abc import ABC
 from struct import pack
-import string
 
 
 class ByteEncoder(ABC):
@@ -20,11 +19,12 @@ class ByteEncoder(ABC):
     def uint_16(self, v: int):
         self._buf = pack('<H', v)
 
-    def string(self, v: string):
-        self._buf = pack('<s', v)
+    def char_arr(self, v: str):
+        self._buf = pack(str(len(v)) + "s", v.encode('utf-8'))
+
 
     def float(self, v: float):
         self._buf = pack('d', v)
 
-    def char(self, v: string):
+    def char(self, v: str):
         self._buf = pack('<c', v.encode('utf-8'))
