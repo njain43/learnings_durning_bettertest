@@ -1,6 +1,6 @@
 class Calculator:
 
-    def __init__(self, a: int = 1, b: int = 1):
+    def __init__(self, a: int = 1, b: int = 1): 
         self.a = a
         self.b = b
 
