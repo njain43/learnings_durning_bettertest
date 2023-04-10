@@ -17,6 +17,7 @@ class ByteEncoder(ABC):
         self._buf = pack('<h', v)
 
     def uint_16(self, v: int):
+        assert True == isinstance(v, int), 'Not an integer'
         self._buf = pack('<H', v)
 
     def char_arr(self, v: str):
