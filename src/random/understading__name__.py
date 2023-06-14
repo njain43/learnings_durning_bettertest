@@ -8,8 +8,7 @@ Desc: __name__ is a special variable in python.
 
 
 def hello_world():
-    print(f' hello {__name__}')
-
+    return f'hello {__name__}'
 
 def main():
     hello_world()
