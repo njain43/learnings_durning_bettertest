@@ -14,3 +14,9 @@ Test Substraction
 
     ${res}   Substract Two Numners        6   5
     Should Be Equal     ${res}   ${1}
+
+
+Add 2 Nums
+#    ${nums} =  ${5} + ${6}
+    ${sum}=    Evaluate    ${5} + ${6}
+    Log To Console     ${sum}
