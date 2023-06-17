@@ -1,6 +1,6 @@
 from robot.api.deco import keyword, library
 from abc import ABC
-from src.random.calculator import Calculator
+from src.random_program.calculator import Calculator
 
 
 @library(scope='GLOBAL', version='0.0.1', auto_keywords=False)
