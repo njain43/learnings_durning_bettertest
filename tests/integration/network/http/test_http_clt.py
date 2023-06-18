@@ -1,6 +1,5 @@
 from unittest import TestCase
-
-from itsdangerous import json
+import json
 
 from src.network.http import clt
 
