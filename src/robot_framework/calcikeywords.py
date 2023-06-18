@@ -4,15 +4,14 @@ from src.random_program.calculator import Calculator
 
 
 @library(scope='GLOBAL', version='0.0.1', auto_keywords=False)
-class CalculatorKeyworkds(ABC):
-
+class CalculatorKeywords(ABC):
 
     @keyword
     def adding_two_numbers(self, a: int, b: int) -> int:
-        self.calci = Calculator(a, b)
-        return self.calci.add()
+        calci = Calculator(a, b)
+        return calci.add()
 
     @keyword
-    def substract_two_numners(self, a: int, b: int) -> int:
-        self.calci = Calculator(a, b)
-        return self.calci.substract()
+    def subtract_two_numbers(self, a: int, b: int) -> int:
+        calci = Calculator(a, b)
+        return calci.substract()
