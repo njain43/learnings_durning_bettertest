@@ -1,6 +1,6 @@
 *** Settings ***
 
-Library    src.robot_framework.calcikeywords.CalculatorKeyworkds
+Library    src.robot_framework.calcikeywords.CalculatorKeywords
 
 
 *** Test Cases ***
@@ -12,7 +12,7 @@ Test Addition
 
 Test Substraction
 
-    ${res}   Substract Two Numners        6   5
+    ${res}   Subsract Two Numbers        6   5
     Should Be Equal     ${res}   ${1}
 
 

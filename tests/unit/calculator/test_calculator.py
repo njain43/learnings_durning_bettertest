@@ -23,7 +23,7 @@ class TestCalculator(TestCase):
     def test_addition(self):
         self.assertEqual(7, self.calci.add())
 
-    def test_substraction(self):
+    def test_subtraction(self):
         self.assertEqual(1, self.calci.substract())
 
     def test_multiplication(self):
