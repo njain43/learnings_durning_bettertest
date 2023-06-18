@@ -10,9 +10,9 @@ Test Addition
     ${res}   Adding Two Numbers    5    6
     Should Be Equal     ${res}   ${11}
 
-Test Substraction
+Test Subtraction
 
-    ${res}   Subsract Two Numbers        6   5
+    ${res}   Subtract Two Numbers        6   5
     Should Be Equal     ${res}   ${1}
 
 
