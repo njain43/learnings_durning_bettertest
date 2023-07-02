@@ -33,4 +33,6 @@ but rather creates a new object with the same value.
 Python handles memory management automatically using a mechanism called reference counting.
 Whenever an object's reference count drops to zero, meaning no variables or references are pointing to it,
  Python's garbage collector deallocates the memory occupied by that object.
+ 
+ It's worth noting that while Python handles memory deallocation for most objects, there are cases where you may need to explicitly release resources, such as closing files or database connections or network connections,to free up system resources. In such situations, it's important to follow best practices and use appropriate techniques, such as context managers (with statement) or explicit resource cleanup, to ensure proper resource deallocation
 """
