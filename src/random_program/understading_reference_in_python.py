@@ -28,4 +28,9 @@ This is because a and location_dict are referencing the same dictionary object i
 It's important to note that this behavior applies to mutable objects like dictionaries, lists, and sets. 
 For immutable objects like integers, strings, and tuples, assignment does not create a reference to the same object, 
 but rather creates a new object with the same value.
+
+
+Python handles memory management automatically using a mechanism called reference counting.
+Whenever an object's reference count drops to zero, meaning no variables or references are pointing to it,
+ Python's garbage collector deallocates the memory occupied by that object.
 """
