@@ -1,0 +1,7 @@
+name: hackerrankquestions
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - requests
+  - pytest
