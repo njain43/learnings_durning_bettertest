@@ -8,9 +8,9 @@ from src.random_program.default_mutable_argument import DateTimeInDifferentForma
 class TestDefaultMutableArgument(unittest.TestCase):
 
     def test_time_with_default_arugment(self):
-        t1 = DateTimeInDifferentFormat.incorrect_way_of_timestamp()
+        t1 = DateTimeInDifferentFormat.incorrect_way_of_getting_timestamp()
         time.sleep(5)
-        t2 = DateTimeInDifferentFormat.incorrect_way_of_timestamp()
+        t2 = DateTimeInDifferentFormat.incorrect_way_of_getting_timestamp()
         self.assertEqual(t1, t2)
         print(
             f' It shows that even after sleep of 5 secs, t1 {t1} and t2-{t2} are same because default argument in the '
@@ -20,16 +20,16 @@ class TestDefaultMutableArgument(unittest.TestCase):
               f' and subsequent calls to the function will retain and share the same mutable object.')
 
     def test_time_without_using_default_argument(self):
-        t1 = DateTimeInDifferentFormat.incorrect_way_of_timestamp(datetime.datetime.now())
+        t1 = DateTimeInDifferentFormat.incorrect_way_of_getting_timestamp(datetime.datetime.now())
         time.sleep(2)
-        t2 = DateTimeInDifferentFormat.incorrect_way_of_timestamp(datetime.datetime.now())
+        t2 = DateTimeInDifferentFormat.incorrect_way_of_getting_timestamp(datetime.datetime.now())
         print(f'different values of t1{t1} and t2-{t2}')
         self.assertNotEqual(t1, t2)
 
     def test_correct_way(self):
-        t1 = DateTimeInDifferentFormat.correct_way()
+        t1 = DateTimeInDifferentFormat.correct_way_of_getting_timestamp()
         time.sleep(2)
-        t2 = DateTimeInDifferentFormat.correct_way()
+        t2 = DateTimeInDifferentFormat.correct_way_of_getting_timestamp()
         print(f'different values of t1{t1} and t2-{t2}')
         self.assertNotEqual(t1, t2)
 
