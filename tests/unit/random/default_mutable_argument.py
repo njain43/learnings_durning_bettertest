@@ -27,9 +27,9 @@ class TestDefaultMutableArgument(unittest.TestCase):
         self.assertNotEqual(t1, t2)
 
     def test_correct_way(self):
-        t1 = DateTimeInDifferentFormat.correct_way_of_getting_timestamp()
+        t1 = DateTimeInDifferentFormat.correct_way()
         time.sleep(2)
-        t2 = DateTimeInDifferentFormat.correct_way_of_getting_timestamp()
+        t2 = DateTimeInDifferentFormat.correct_way()
         print(f'different values of t1{t1} and t2-{t2}')
         self.assertNotEqual(t1, t2)
 

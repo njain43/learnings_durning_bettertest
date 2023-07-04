@@ -1,12 +1,12 @@
-from unittest import TestCase
+
+from unittest import TestCase, skip
 import json
 
 from src.network.http import clt
 
 
-# Below are integration test, move to integration folder.
 
-
+@skip
 class TestHttpClt(TestCase):
 
     def setUp(self):

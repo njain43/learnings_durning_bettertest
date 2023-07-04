@@ -14,7 +14,7 @@ class DateTimeInDifferentFormat:
         return f'{d.strftime("%Y%m%d-%H:%M:%S")}'
 
     @staticmethod
-    def correct_way_of_getting_timestamp(d: datetime = None):
+    def correct_way(d: datetime = None):
         if d is None:
             d = datetime.now()
             return f'{d.strftime("%Y%m%d-%H:%M:%S")}'
