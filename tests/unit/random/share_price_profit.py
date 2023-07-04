@@ -6,7 +6,7 @@ class TestMinMax(TestCase):
 
     def setUp(self) -> None:
         sample_price_list = [1, 2, 4, 3, 8, 10, 9]
-        share_price_list = [1, 4, .5, 2, 3, 7, 5, 8, 6, 8]
+        share_price_list = [1, 4, .5, .3]
         self.obj = MinMax(sample_price_list)
         self.max_profit = MaxPossibleProfit(share_price_list)
 
@@ -20,4 +20,4 @@ class TestMinMax(TestCase):
         self.assertEqual(9, self.obj.get_profit())
 
     def test_max_profit(self):
-        self.assertEqual(7.5, self.max_profit.get_profit())
+        self.assertEqual(3.5, self.max_profit.get_profit())

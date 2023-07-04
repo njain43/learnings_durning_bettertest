@@ -30,6 +30,9 @@ class MaxPossibleProfit:
             price = self.list_of_price[0]
         return self.list_of_price.index(price)
 
+    def check_sell_possibility(self, price_indx : int):
+        pass
+
     def get_profit(self) -> int | float:
         indx_buy_price = self.get_indx()
         indx_sell_price = None
@@ -39,7 +42,7 @@ class MaxPossibleProfit:
             if i < buy_price and (indx_sell_price is None or self.get_indx(i) > indx_sell_price):
                 buy_price = i
                 indx_buy_price = self.get_indx(buy_price)
-            elif i > sell_price and self.get_indx(i) < indx_buy_price:
+            elif i > sell_price and self.get_indx(i) > indx_buy_price:
                 sell_price = i
                 indx_sell_price = self.get_indx(sell_price)
 
