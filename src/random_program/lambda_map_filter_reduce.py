@@ -21,6 +21,6 @@ print(list(map(lambda x: x * x * x, [1, 2, 3, 4])))
 # filter out even numbers
 print(f'Filter out even numbers {(list(filter(lambda x: x % 2 != 0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))}')
 
-
 from functools import reduce
-print(f'Factorial - {(reduce(lambda x,y : x*y, [1,2,3,4,5]))}')
+
+print(f'Factorial - {(reduce(lambda x, y: x * y, [1, 2, 3, 4, 5]))}')

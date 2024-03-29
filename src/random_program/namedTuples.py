@@ -10,5 +10,5 @@ student = ('Nitesh', 'Jain', 'A')
 # Now named tuples allows elements to be accessed by name instead of just by index.
 from  collections import namedtuple
 
-exchanges = namedtuple('Student', ['first', 'last', 'grade'])
-
+exchanges = namedtuple('exchanges', ['name', 'region', 'currency'])
+exchanges.

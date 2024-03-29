@@ -9,6 +9,12 @@
     pytest tests/unit tests/integration 
 ```
 
+```
+Insall packages via :
+conda.bat install -p C:/Users/nites/anaconda3/envs/hackerrankquestions lxml -y
+
+```
+
 ```shell
   export PATH=/c/Users/nites/anaconda3/condabin
   conda --version
