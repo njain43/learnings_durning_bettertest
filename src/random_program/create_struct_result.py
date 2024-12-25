@@ -2,34 +2,51 @@
 data = {}
 
 # Helper function to add a tag and value to the nested dictionary
-def add_to_structure(tags, value=None):
-    current = data
-    for tag in tags[:-1]:  # Traverse to the second-to-last level
-        if tag not in current:
-            current[tag] = []  # Ensure intermediate levels are lists
-        # Ensure the last element in the list is a dictionary
-        if not current[tag] or not isinstance(current[tag][-1], dict):
-            current[tag].append({})
-        current = current[tag][-1]  # Dive into the last dictionary in the list
+def add_to_structure(path, value=None):
+    """
+    Add the tag and value to the nested dictionary at the correct level.
 
-    # Add the final tag with the value
-    last_tag = tags[-1]
+    :param path: List of tags representing the hierarchy.
+    :param value: Value to be added at the final tag level.
+    """
+    current = data
+    for tag in path[:-1]:  # Traverse to the second-to-last level
+        if tag not in current:
+            # Use lists for "Tactic" and "BWDP", dictionaries for others
+            if tag == "Tactic" or tag == "BWDP":
+                current[tag] = []
+            else:
+                current[tag] = {}
+        if isinstance(current[tag], list):
+            # Ensure the last element in the list is a dictionary
+            if not current[tag] or not isinstance(current[tag][-1], dict):
+                current[tag].append({})
+            current = current[tag][-1]
+        else:
+            current = current[tag]
+
+    # Add the final tag and value
+    last_tag = path[-1]
     if value is not None:
-        current[last_tag] = value  # Assign the value directly for the final tag
+        if last_tag == "LitVenues":
+            # Ensure LitVenues contains a dictionary for LitVenue, not a list
+            current[last_tag] = {"LitVenue": value}
+        else:
+            current[last_tag] = value
     else:
         if last_tag not in current:
-            current[last_tag] = []  # Create an empty list for nesting
+            current[last_tag] = []
 
-# Simulate receiving tags from the socket
+# Simulated incoming tags from the socket
 received_tags = [
     (1, None),  # Tactic
     (2, None),  # BWDP
+    (7, None),  # ClientList
+    (8, {"venue1": "a"}),  # venue
     (3, None),  # LitVenues
     (4, None),  # LitVenue
-    (5, 'a'),   # venue1
-    (6, 'b'),   # venue2
-    (7, None),  # ClientList
-    (8, {'venue1': 'a'}),  # venue
+    (5, "a"),   # venue1
+    (6, "b"),   # venue2
     (9, 1),     # TimedRelease
 ]
 
@@ -63,3 +80,25 @@ for tag, value in received_tags:
 # Print the resulting structure
 import pprint
 pprint.pprint(data)
+
+
+
+var = {
+    "Tactic": [
+        {
+            "BWDP": [
+                {"ClientList": [{"venue": {"venue1": "a"}}]},
+                {"LitVenues": [{"LitVenue": {"venue1": "a", "venue2": "b"}}]},
+                {"TimedRelease": 1},
+            ]
+        }
+    ]
+}
+
+
+a = {'Tactic': [{'BWDP': [
+    {'ClientList': [{'venue': {'venue1': 'a'}}]},
+    {'LitVenues': [{'LitVenue': {'venue1': 'a', 'venue2': 'b'}}]},
+    {'TimedRelease': 1}]
+}]}
+
