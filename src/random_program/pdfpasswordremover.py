@@ -2,13 +2,15 @@ from PyPDF2 import PdfReader, PdfWriter
 
 input_pdf = "C:/Users/nites/Downloads/regalia.pdf"
 output_pdf = "C:/Users/nites/Downloads/unprotected.pdf"
-password = "NITE2911"
+password = ""
 
 reader = PdfReader(input_pdf)
 reader.decrypt(password)
 
 writer = PdfWriter()
 for page in reader.pages:
+
+
     writer.add_page(page)
 
 with open(output_pdf, "wb") as f:
