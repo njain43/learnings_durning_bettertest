@@ -1,3 +1,4 @@
+import logging
 from unittest import TestCase
 from src.codec.decoder import ByteDecoder
 
@@ -13,6 +14,7 @@ class TestDecoder(TestCase):
 
     def test_char_arr(self):
         self._x.char_arr(b'NewOrderSingle')
+        logging.log(logging.DEBUG, f'char_arr: {self._x.value()}')
         self.assertEqual('NewOrderSingle', self._x.value())
 
     def test_char(self):
