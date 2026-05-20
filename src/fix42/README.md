@@ -296,3 +296,32 @@ When adding new features:
 3. Update this documentation
 4. Follow the existing code style and patterns
 
+## FIX over TCP (network integration)
+
+This project includes a lightweight, production-style TCP server and client
+implementation located at `src/network/tcp/` which is used by unit tests and
+examples to exercise FIX message flows over TCP sockets.
+
+Key points:
+- `src/network/tcp/server.py` - `TCPServer` supports a configurable thread
+  pool, graceful shutdown, and a pluggable `handler(conn, addr, data)` used
+  to implement protocol logic (the handler receives raw FIX bytes and should
+  return response bytes when appropriate).
+- `src/network/tcp/client.py` - `TCPClient` is a simple blocking client that
+  sends bytes and returns the response bytes from the server.
+- Tests that exercise FIX over TCP (e.g., `tests/unit/fix42/test_fix_over_tcp.py`)
+  demonstrate a Logon followed by a NewOrderSingle and an ExecutionReport
+  response.
+
+Logging and debugging:
+- Tests configure `logging.basicConfig(level=logging.DEBUG)` to make TCP and
+  FIX messages visible during test runs. The FIX encoder/decoder provide
+  `get_formatted_message()` helpers to print messages in a human-friendly
+  pipe-delimited format (e.g. `8=FIX.4.2|9=...|35=D|...|`).
+
+Run the FIX-over-TCP unit test:
+
+```bash
+export PYTHONPATH=./src:./tests
+python3 -m unittest tests/unit/fix42/test_fix_over_tcp.py -v
+```
